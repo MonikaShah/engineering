@@ -424,7 +424,7 @@ tr{
   
 
       
-    var wms = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+    var wms = L.tileLayer.wms('https://geonode.communitygis.in/geoserver/wms', {
 				// layer: layer,
         layers: 'geonode:states_in_india',
 				format: 'image/png',
@@ -434,7 +434,7 @@ tr{
       wms.addTo(mymap);
       // //console.log(layers);
       // console.log(wms);
-
+     
 
 var Amravati =['choose','All','Akola' ,'Amravati','Buldhana','Yavatmal','Washim']
 var Aurangabad=['choose','All','Aurangabad','Beed','Jalna','Osmanabad' , 'Nanded', 'Latur','Parbhani' ,'Hingoli']
@@ -622,7 +622,7 @@ $("#inputDistrict").change(function(){
   var oo = "";
   var ss = "";
   if(districtLayer)mymap.removeLayer(districtLayer);
-  // districtLayer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+  // districtLayer = L.tileLayer.wms('https://geonode.commuitygis.in/geoserver/wms', {
   //         layers: '	geonode:maharashtra_districts',
   //         format: 'image/png',
   //         transparent: 'true',
@@ -632,7 +632,7 @@ $("#inputDistrict").change(function(){
 
     if(DistrictSelected!='All'){
 
-      fetch('https://geoserver2.communitygis.net/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Amaharashtra_districts&outputFormat=application%2Fjson')
+      fetch('https://geonode.commuitygis.in/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Amaharashtra_districts&outputFormat=application%2Fjson')
         .then(result=>result.json())
         .then((output)=>{
           districtLayer = L.geoJson(output,{
@@ -827,7 +827,7 @@ $("#inputTaluka").change(function(){
   var ss="";
   console.log(TalukaSelected)
   if (talukaLayer)mymap.removeLayer(talukaLayer);
-  talukaLayer = L.tileLayer.wms('https://geoserver2.communitygis.net/geoserver/wms', {
+  talukaLayer = L.tileLayer.wms('https://geonode.commuitygis.in/geoserver/wms', {
           layers: 'geonode:maha_taluka_13march2021',
           format: 'image/png', 
           transparent: 'true',  
